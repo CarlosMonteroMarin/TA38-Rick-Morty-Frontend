@@ -1,0 +1,10 @@
+<div *ngIf="personajes!=null; else espera">
+      <table class="d-flex justify-content-around flex-wrap" >
+        <tr *ngFor="let  pers of personajes.characters" class="d-flex m-4 flex-column text-center">
+          <td><img src="{{pers.image}}" alt="Imagen personaje"></td>
+          <td class="m-3">{{pers.name}}</td>
+          <button type="button" class="btn btn-warning m-3">See more</button>
+        </tr>
+      </table>
+</div>
+<ng-template #espera>Morty está trayendo los datos...</ng-template>
