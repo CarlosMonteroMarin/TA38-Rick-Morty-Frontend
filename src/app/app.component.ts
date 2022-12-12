@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CharsService } from './chars.service';
 
 
 @Component({

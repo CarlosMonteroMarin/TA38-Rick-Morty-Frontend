@@ -1,0 +1,13 @@
+<div *ngIf="detalles!=null; else espera">
+    <table class="d-flex justify-content-around flex-wrap" >
+      <tr class="d-flex m-4 flex-column text-center">
+        <td><h1>{{detalles.name}}</h1></td>
+        <td>id: {{detalles.id}}</td>
+        <td>Nombre: {{detalles.name}}</td>
+        <td>Estatus: {{detalles.status}}</td>
+        <td>Especie: {{detalles.species}}</td>
+        <td><img src="{{detalles.image}}" alt="Imagen personaje"></td>
+      </tr>
+    </table>
+</div>
+<ng-template #espera>Morty está trayendo los datos...</ng-template>

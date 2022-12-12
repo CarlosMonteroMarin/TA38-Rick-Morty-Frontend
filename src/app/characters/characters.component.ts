@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Component, Input, OnInit } from '@angular/core';
+import { CharsService } from '../chars.service';
 
 @Component({
   selector: 'app-characters',
@@ -10,14 +10,11 @@ export class CharactersComponent implements OnInit {
 
   personajes: any = null;
 
-  constructor (private http: HttpClient){}
+  constructor (private charsService: CharsService){}
 
   ngOnInit (){
-    this.http.get("../../assets/database.json")
-    .subscribe(
-      result => {
-        this.personajes = result;
-      }
-    );
+    this.charsService.retorna()
+    .subscribe(result => this.personajes = result);
   }
+
 }
